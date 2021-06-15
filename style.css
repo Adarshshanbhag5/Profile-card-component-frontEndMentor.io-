@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Dark-cyan: hsl(185, 75%, 39%);
+  --Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --Dark-grayish-blue: hsl(227, 10%, 46%);
+  --Dark-gray: hsl(0, 0%, 59%);
+}
+
+body {
+  background-blend-mode: multiply;
+  font-family: "Kumbh Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--Dark-cyan);
+  position: relative;
+  z-index: 1;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(./images/bg-pattern-top.svg) no-repeat;
+  background-size: 85%;
+  background-position: -550px -700px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(./images/bg-pattern-bottom.svg) no-repeat;
+  background-size: 85%;
+  background-position: 620px 300px;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+h1,
+h2 {
+  color: var(--Very-dark-desaturated-blue);
+}
+
+p,
+span {
+  color: var(--Dark-grayish-blue);
+}
+
+.profile-card {
+  width: 350px;
+  height: 380px;
+  border-radius: 15px;
+}
+
+.background {
+  height: 40%;
+  width: 100%;
+  background: url(./images/bg-pattern-card.svg) center no-repeat;
+  background-size: cover;
+  background-color: var(--Dark-cyan);
+  border-radius: 15px 15px 0px 0px;
+}
+
+.profile {
+  background-color: #fff;
+  text-align: center;
+  height: 35%;
+  position: relative;
+}
+
+.img {
+  background: url(./images/image-victor.jpg) center no-repeat;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.detail {
+  transform: translateY(50%);
+  height: 100%;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 25%;
+  background-color: #fff;
+  border-top: 1px solid var(--Dark-gray);
+  border-radius: 0px 0px 15px 15px;
+}
+
+@media screen and (max-width: 500px) {
+  body::after {
+    background-position: 150px 400px;
+    background-size: 200%;
+  }
+
+  body::before {
+    background-position: -550px -300px;
+    background-size: 200%;
+  }
+
+  .profile-card {
+    width: 90%;
+    height: 50vh;
+  }
+}
